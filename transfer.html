@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="transfer.css">
+</head>
+
+<body>
+    <!-- we are making a table -->
+    <center>
+        <h1>Transfer Money Here</h1>
+        <table border="4">
+            <tr>
+                <th>Enter your Name </th>
+                <td><input type="text" name="name" id="Transferred_From" /></td>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Enter whom to transfer money </th>
+                <td><input type="text" name="name" id="Transferred_to" /></td>
+            </tr>
+
+            <tr>
+                <th>Enter The Amount </th>
+                <td><input type="number" name="Amount" id="Amount" /></td>
+            </tr>
+
+            <tr>
+                <th>Email of the Recepient</th>
+                <td><input type="email" name="email" id="email" /></td>
+            </tr>
+
+            <tr id="btna">
+                <th></th>
+                <td>
+                    <input style="width: 100%" type="button" value="Transfer" id="btn" onclick="AddRow()" />
+                </td>
+            </tr>
+        </table>
+        <br /><br /><br />
+        <h1>See Your Transfer History Here</h1>
+        <table border="4" id="show">
+            <tr>
+                <th>Transferred_From</th>
+                <th>Transferred_to</th>
+                <th>Amount</th>
+                <th>Email of the Recepient</th>
+
+            </tr>
+        </table>
+    </center>
+
+    <script>
+        let x = 0;
+        let n = 1;
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+
+        // creating function
+        function AddRow() {
+            var AddRow = document.getElementById("show");
+            var NewRow = AddRow.insertRow(n);
+
+            list1[x] = document.getElementById("Transferred_From").value;
+            list2[x] = document.getElementById("Transferred_to").value;
+            list3[x] = document.getElementById("Amount").value;
+            list4[x] = document.getElementById("email").value;
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+
+            x++;
+            n++;
+        }
+    </script>
+</body>
+
+</html>
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="transfer.css">
+</head>
+
+<body>
+    <div align="center" class="container">
+        <h1>Transfer Money</h1>
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td><label for="">Select whom to transfer</label></td>
+                    <td><select name="" id="">
+                        <option value="">Select</option>
+                        <option value="">Ruchita Dahatonde</option>
+                        <option value="">Rohit Dahatonde</option>
+                        <option value="">Raosaheb Dahatonde</option>
+                        <option value="">Minakshi Dahatonde</option>
+                        <option value="">Shreya Raut</option>
+                        <option value="">Harsha Bhand</option>
+                        <option value="">Soham Kulkarni</option>
+                        <option value="">Anuja Sonawane</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Amount to be transferred</label></td>
+                    <td><input type="number" name="" id="">
+                    </td>
+                    <tr>
+                        <td></td>
+                        <td><button onclick="confirm( 'Are you sure you want to perform this transaction')">Transfer</button></td>
+                    </tr>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script src="./transfer.js"></script>
+
+</body>
+
+</html>-->
